@@ -51,6 +51,25 @@ namespace Platformer.Mechanics
             animator = GetComponent<Animator>();
         }
 
+        // Function to allow other scripts to set the end of a jump.
+        public void setStopJump(bool js)
+        {
+            stopJump = js;
+        }
+
+        // Function to setVelocity.
+        public void setVelocity(Vector2 v)
+        {
+            velocity.x = v.x;
+            velocity.y = v.y;
+        }
+
+        // Function to getVelocity.
+        public Vector2 getVelocity()
+        {
+            return velocity;
+        }
+
         protected override void Update()
         {
             if (controlEnabled)

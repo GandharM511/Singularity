@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Singularity
 {
-    public class PlatformSwitchable : MonoBehaviour, ISwitchableObject
+    public class PlatformMoveSwitchable : MonoBehaviour, ISwitchableObject
     {
         public Vector3 movementVector;
         public GameObject switchToSubscribe;
@@ -34,3 +34,4 @@ namespace Singularity
         }
     }
 }
+

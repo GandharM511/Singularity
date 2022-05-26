@@ -11,10 +11,12 @@ public class CameraController : MonoBehaviour
     private Camera managedCamera;
     private GameObject currCharacter;
     private GameObject otherCharacter;
+    private Vector2 storedVelo;
 
     private void Awake()
     {
         this.managedCamera = this.gameObject.GetComponent<Camera>();
+        storedVelo = Vector2.zero;
     }
 
     void Start()
@@ -36,8 +38,23 @@ public class CameraController : MonoBehaviour
 
     private void setMovementPerms()
     {
-        currCharacter.GetComponent<PlayerController>().controlEnabled = true;
-        otherCharacter.GetComponent<PlayerController>().controlEnabled = false;
+        var currController = currCharacter.GetComponent<PlayerController>();
+        currController.controlEnabled = true;
+        // enable gravity to "resume" world
+        var rb1 = currCharacter.GetComponent<Rigidbody2D>();
+        rb1.constraints = RigidbodyConstraints2D.FreezeRotation;
+        currController.setVelocity(storedVelo);
+
+        var otherController = otherCharacter.GetComponent<PlayerController>();
+        otherController.controlEnabled = false;
+        // disable gravity to "pause" world
+        var rb2 = otherCharacter.GetComponent<Rigidbody2D>();
+        rb2.constraints = RigidbodyConstraints2D.FreezeAll;
+        otherController.setStopJump(true);
+        storedVelo = otherController.getVelocity();
+
+
+
     }
 
     // moves the camera and allows player to begin controlling the other character
@@ -62,5 +79,23 @@ public class CameraController : MonoBehaviour
         otherCharacter = temp;
 
         setMovementPerms();
+    }
+
+    // Returns true if the GameObject c is the same as the active character.
+    public bool isCharacterActive(GameObject c)
+    {
+        if (c == currCharacter)
+            return true;
+
+        return false; 
+    }
+
+    // Returns true if the GameObject c is the same as the inactive character.
+    public bool isCharacterInActive(GameObject c)
+    {
+        if (c == otherCharacter)
+            return true;
+        
+        return false;
     }
 }

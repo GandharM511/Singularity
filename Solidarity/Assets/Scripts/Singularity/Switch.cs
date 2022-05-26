@@ -12,6 +12,8 @@ namespace Singularity
         public GameObject switchObject;
         private bool switchedOn = false;
         private bool collided = false;
+        private GameObject characterTouchingSwitch = null;
+        private GameObject cameraController;
 
         // Subscribes to the publisher by making a tuple of onFunc and offFunc.
         // These functions should execute the expected behavior for when the switch
@@ -30,17 +32,20 @@ namespace Singularity
         void OnTriggerEnter2D(Collider2D col)
         {
             // Check if player is active
+            characterTouchingSwitch = col.gameObject;
             collided = true;
         }
 
         void OnTriggerExit2D(Collider2D col)
         {
+            characterTouchingSwitch = null;
             collided = false;
         }
 
         void Update()
         {
-            if (collided)
+            // check that there is something touching the switch and that it is the active character
+            if (collided && characterTouchingSwitch != null && cameraController.GetComponent<CameraController>().isCharacterActive(characterTouchingSwitch))
             {
                 if (Input.GetButtonDown("Fire2"))
                 {
@@ -58,6 +63,11 @@ namespace Singularity
                     }
                 }
             }
+        }
+
+        void Start()
+        {
+            cameraController = GameObject.Find("Main Camera");
         }
 
 
