@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 822453550}
   - component: {fileID: 822453548}
   - component: {fileID: 822453549}
+  - component: {fileID: 822453552}
   m_Layer: 0
   m_Name: plat1 (1)
   m_TagString: Untagged
@@ -493,12 +494,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822453546}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a13f1f214053fc94db5638259ce654b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 0, z: 0}
+  movementVector: {x: 0, y: 8, z: 0}
   switchToSubscribe: {fileID: 1130200007}
 --- !u!23 &822453550
 MeshRenderer:
@@ -549,6 +550,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822453546}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &822453552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822453546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9405ad0ecb6ccd34da881612912eab45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveVector: {x: 0, y: 8, z: 0}
+  switchToSubscribe: {fileID: 1130200007}
+  totalTime: 2
 --- !u!1001 &1073839494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -869,6 +885,7 @@ GameObject:
   - component: {fileID: 1462344843}
   - component: {fileID: 1462344842}
   - component: {fileID: 1462344846}
+  - component: {fileID: 1462344847}
   m_Layer: 0
   m_Name: plat1
   m_TagString: Untagged
@@ -972,13 +989,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462344841}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a13f1f214053fc94db5638259ce654b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementVector: {x: 0, y: 8, z: 0}
   switchToSubscribe: {fileID: 1130200007}
+--- !u!114 &1462344847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462344841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9405ad0ecb6ccd34da881612912eab45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveVector: {x: 0, y: 8, z: 0}
+  switchToSubscribe: {fileID: 1130200007}
+  totalTime: 2
 --- !u!1 &1651484276
 GameObject:
   m_ObjectHideFlags: 0

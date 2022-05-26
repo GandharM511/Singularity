@@ -4,33 +4,70 @@ using UnityEngine;
 
 namespace Singularity
 {
-    public class PlatformMoveSwitchable : MonoBehaviour, ISwitchableObject
+    public class PlatformMoveSwitch : MonoBehaviour, ISwitchableObject
     {
-        public Vector3 movementVector;
+        public Vector3 moveVector;
         public GameObject switchToSubscribe;
         public float totalTime;
 
         private Vector3 startPosition;
         private Vector3 goalLocation;
-        private float time = 0f;
-        private Vector3 currlocation;
+        private Vector3 finalPosition;
+        private Vector3 currLocation;
+        private float speed;
+
+        private CameraController cameraController;
 
         void Start()
         {
+            cameraController = GameObject.Find("Main Camera").GetComponent<CameraController>();
+
             switchToSubscribe.GetComponent<Switch>().SubscribeToSwitch(On, Off);
             startPosition = transform.position;
-            currlocation = startPosition;
+            currLocation = startPosition;
+            finalPosition = startPosition + moveVector;
+            goalLocation = startPosition;
+            speed = Vector2.Distance(finalPosition, startPosition) / totalTime;
+        }
+
+        // set the parent of the player to this object so that the character moves with it while standing on it
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            if (col.gameObject == cameraController.character1 || col.gameObject == cameraController.character2)
+            {
+                col.collider.transform.SetParent(transform);
+            }
+        }
+
+        // unset the parent
+        private void OnCollisionExit2D(Collision2D col)
+        {
+            if (col.gameObject == cameraController.character1)
+            {
+                col.collider.transform.SetParent(GameObject.Find("World 1").transform);
+            }
+            else if (col.gameObject == cameraController.character2)
+            {
+                col.collider.transform.SetParent(GameObject.Find("World 2").transform);
+            }
         }
 
         public void On()
         {
-            // could use lerp here and some time function to make the platform "move"
-            transform.position += movementVector;
+            goalLocation = finalPosition;
         }
 
         public void Off()
         {
-            transform.position = startPosition;
+            goalLocation = startPosition;
+        }
+
+        // move the gameObject to the goal Position
+        void FixedUpdate()
+        {
+            float step = Time.deltaTime * speed;
+            currLocation = Vector2.MoveTowards(currLocation, goalLocation, step);
+            transform.position = currLocation;
         }
     }
 }
