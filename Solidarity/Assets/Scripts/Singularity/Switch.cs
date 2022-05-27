@@ -5,10 +5,11 @@ using System;
 
 namespace Singularity
 {
-    public class Switch : MonoBehaviour 
+    // A switch notifies on if it is switched on otherwise notifies off.
+    // Only the active character can flip a switch.
+    public class Switch : AbstractSwitchableObject
     {
         private OnOffPublisher switchPublisher = new OnOffPublisher();
-        [SerializeField]
         public GameObject switchObject;
         private bool switchedOn = false;
         private bool collided = false;
@@ -18,13 +19,13 @@ namespace Singularity
         // Subscribes to the publisher by making a tuple of onFunc and offFunc.
         // These functions should execute the expected behavior for when the switch
         // is turned On and when it is turned Off.
-        public void SubscribeToSwitch(Action onFunc, Action offFunc)
+        public override void SubscribeTo(Action onFunc, Action offFunc)
         {
             switchPublisher.Subscribe(Tuple.Create(onFunc, offFunc));
         }
 
         // Unsubscribes from the publisher
-        public void UnsubscribeFromSwitch(Action onFunc, Action offFunc)
+        public override void UnsubscribeFrom(Action onFunc, Action offFunc)
         {
             switchPublisher.Unsubscribe(Tuple.Create(onFunc, offFunc));
         }
@@ -49,6 +50,7 @@ namespace Singularity
             {
                 if (Input.GetButtonDown("Fire2"))
                 {
+                    // TODO: play switch audio
                     if (switchedOn == false)
                     {
                         // When the switch is turned on we must call notify On.

@@ -5,15 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - TutorialRequirement
+  - Floor
+  - Background
+  - Switch
+  - Pressure Plate
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Characters
   - Water
   - UI
-  - 
-  - 
+  - Platforms, objects
+  - Floors, walls, background
   - 
   - 
   - 

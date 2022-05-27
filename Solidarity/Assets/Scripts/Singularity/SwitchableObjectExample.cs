@@ -10,7 +10,7 @@ namespace Singularity
 
         void Start()
         {
-            switchToSubscribe.GetComponent<Switch>().SubscribeToSwitch(On, Off);
+            switchToSubscribe.GetComponent<Switch>().SubscribeTo(On, Off);
         }
 
         public void On()

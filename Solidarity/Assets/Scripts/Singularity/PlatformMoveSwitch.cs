@@ -7,8 +7,8 @@ namespace Singularity
     public class PlatformMoveSwitch : MonoBehaviour, ISwitchableObject
     {
         public Vector3 moveVector;
-        public GameObject switchToSubscribe;
         public float totalTime;
+        public GameObject switchToSubscribe;
 
         private Vector3 startPosition;
         private Vector3 goalLocation;
@@ -22,7 +22,15 @@ namespace Singularity
         {
             cameraController = GameObject.Find("Main Camera").GetComponent<CameraController>();
 
-            switchToSubscribe.GetComponent<Switch>().SubscribeToSwitch(On, Off);
+            if (switchToSubscribe.tag == "Switch")
+            {
+                switchToSubscribe.GetComponent<Switch>().SubscribeTo(On, Off);
+            }
+            else
+            {
+                switchToSubscribe.GetComponent<PressurePlate>().SubscribeTo(On, Off);
+            }
+                
             startPosition = transform.position;
             currLocation = startPosition;
             finalPosition = startPosition + moveVector;
