@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Singularity
 {
@@ -16,6 +17,8 @@ namespace Singularity
         private WorldGoal worldScript2;
         private WorldGoal worldScript3 = null;
 
+        private bool levelCompleted = false;
+
         public void setWorld3Goal(GameObject obj)
         {
             world3Goal = obj;
@@ -25,7 +28,6 @@ namespace Singularity
         {
             worldScript1 = world1Goal.GetComponent<WorldGoal>();
             worldScript2 = world2Goal.GetComponent<WorldGoal>();
-
         }
 
         void Update()
@@ -40,22 +42,34 @@ namespace Singularity
 
             if (gameObject.GetComponent<LevelController>().getWorldCombineState() == false)
             {
-                if (worldScript1.isComplete() && worldScript2.isComplete())
+                if (worldScript1.isComplete() && worldScript2.isComplete() && !levelCompleted)
                 {
                     // TODO: This is where we will advance to the next level
-                    // stop the player control and do an animation. 
-                    Debug.Log("level complete");
+                    // stop the player control and do an animation.
+                    // play finish level sound.
+                    levelCompleted = true;
+                    Invoke("CompleteLevel",  1f);
                 }
             }
             else
             {
                 // only one exit
-                if (worldScript3 != null && worldScript3.isComplete())
+                if (worldScript3 != null && worldScript3.isComplete() && !levelCompleted)
                 {
                     // TODO: this is where we will advance to the next level
                     // stop the player control and do an animation
-                    Debug.Log("level complete");
+                    // play finish level sound.
+                    levelCompleted = true;
+                    Invoke("CompleteLevel", 1f);
                 }
+            }
+        }
+
+        private void CompleteLevel()
+        {
+            if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

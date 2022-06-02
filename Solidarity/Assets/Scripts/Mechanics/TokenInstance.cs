@@ -15,6 +15,7 @@ namespace Platformer.Mechanics
     public class TokenInstance : MonoBehaviour
     {
         public AudioClip tokenCollectAudio;
+        public AudioClip powerUpAudio;
         [Tooltip("If true, animation will start at a random position in the sequence.")]
         public bool randomAnimationStartTime = false;
         [Tooltip("List of frames that make up the animation.")]
@@ -46,7 +47,16 @@ namespace Platformer.Mechanics
             var player = other.gameObject.GetComponent<PlayerController>();
             if (player != null) 
             {
-                AudioSource.PlayClipAtPoint(tokenCollectAudio, transform.position);
+                PowerUpController powerUp = GameObject.Find("Level Controller").GetComponent<PowerUpController>();
+                if (powerUp != null && ((player.playerId == 1 && powerUp.getStandingOn2()) || (player.playerId == 2 && powerUp.getStandingOn1())))
+                {
+                    // TODO PLay special audio for power up  ready
+                    AudioSource.PlayClipAtPoint(powerUpAudio, transform.position);
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(tokenCollectAudio, transform.position);
+                }
                 OnPlayerEnter(player);
                 if (player.playerId == 1)
                 {

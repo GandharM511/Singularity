@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 368062151}
   - component: {fileID: 368062150}
   - component: {fileID: 368062152}
+  - component: {fileID: 368062153}
   m_Layer: 0
   m_Name: Level Controller
   m_TagString: Untagged
@@ -297,6 +298,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   world1Goal: {fileID: 368642926}
   world2Goal: {fileID: 1441299255}
+--- !u!114 &368062153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368062149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c1a54c905b7aa469a944b2a392bb9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &368642926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1522329726441386361, guid: 4252a4da5ef5bcc4eba4dc5991834e68,
@@ -809,6 +822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: jumpTakeOffSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 212064061491315838, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
@@ -1642,6 +1660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character1: {fileID: 1219803343}
   character2: {fileID: 305250155}
+  character3: {fileID: 0}
   worldDistance: 16.84
 --- !u!114 &1651484281
 MonoBehaviour:
@@ -2646,6 +2665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: controlEnabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: jumpTakeOffSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 212064061491315838, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}

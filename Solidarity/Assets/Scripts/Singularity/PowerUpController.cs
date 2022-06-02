@@ -20,6 +20,16 @@ namespace Singularity
             standingOn2 = b;
         }
 
+        public bool getStandingOn1()
+        {
+            return standingOn1;
+        }
+
+        public bool getStandingOn2()
+        {
+            return standingOn2;
+        }
+
         // Checks for button press to enable power up if both characters are standing on their own respective item.
         void Update()
         {
