@@ -9,6 +9,7 @@ TagManager:
   - Background
   - Switch
   - Pressure Plate
+  - Token
   layers:
   - Default
   - TransparentFX

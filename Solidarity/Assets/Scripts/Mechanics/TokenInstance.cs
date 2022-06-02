@@ -1,6 +1,7 @@
 using Platformer.Gameplay;
 using UnityEngine;
 using static Platformer.Core.Simulation;
+using Singularity;
 
 
 namespace Platformer.Mechanics
@@ -38,11 +39,40 @@ namespace Platformer.Mechanics
             sprites = idleAnimation;
         }
 
+        // Updates PowerUpController.
         void OnTriggerEnter2D(Collider2D other)
         {
             //only exectue OnPlayerEnter if the player collides with this token.
             var player = other.gameObject.GetComponent<PlayerController>();
-            if (player != null) OnPlayerEnter(player);
+            if (player != null) 
+            {
+                OnPlayerEnter(player);
+                if (player.playerId == 1)
+                {
+                    GameObject.Find("Level Controller").GetComponent<PowerUpController>().setStandingOn1(true);
+                }
+                else if (player.playerId == 2)
+                {
+                    GameObject.Find("Level Controller").GetComponent<PowerUpController>().setStandingOn2(true);
+                }
+            }
+        }
+
+        // Updates PowerUpController.
+        void OnTriggerExit2D(Collider2D other)
+        {
+            var player = other.gameObject.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                if (player.playerId == 1)
+                {
+                    GameObject.Find("Level Controller").GetComponent<PowerUpController>().setStandingOn1(false);
+                }
+                else if (player.playerId == 2)
+                {
+                    GameObject.Find("Level Controller").GetComponent<PowerUpController>().setStandingOn2(false);
+                }
+            }
         }
 
         void OnPlayerEnter(PlayerController player)
@@ -50,9 +80,9 @@ namespace Platformer.Mechanics
             if (collected) return;
             //disable the gameObject and remove it from the controller update list.
             frame = 0;
-            sprites = collectedAnimation;
-            if (controller != null)
-                collected = true;
+            //sprites = collectedAnimation;
+            //if (controller != null)
+                //collected = true;
             //send an event into the gameplay system to perform some behaviour.
             var ev = Schedule<PlayerTokenCollision>();
             ev.token = this;

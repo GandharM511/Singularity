@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Platformer.Mechanics;
+using Singularity;
 
 public class CameraController : MonoBehaviour
 {
     public GameObject character1;
     public GameObject character2;
+    public GameObject character3;
     
     private Camera managedCamera;
     private GameObject currCharacter;
     private GameObject otherCharacter;
-    private Vector2 storedVelo;
+    public float worldDistance = 16.84f;
 
     private void Awake()
     {
         this.managedCamera = this.gameObject.GetComponent<Camera>();
-        storedVelo = Vector2.zero;
     }
 
     void Start()
     {
         currCharacter = character1;
         otherCharacter = character2;
+
+        character3.GetComponent<PlayerController>().controlEnabled = false;
 
         setMovementPerms();
     }
@@ -31,7 +34,15 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            swapCharacter();
+            LevelController levelController = GameObject.Find("Level Controller").GetComponent<LevelController>();
+            if (levelController == null || levelController.getWorldCombineState() == false)
+            {
+                swapCharacter();
+            }
+            else
+            {
+                UnCombineWorlds();
+            }
         }
     }
 
@@ -43,7 +54,6 @@ public class CameraController : MonoBehaviour
         // enable gravity to "resume" world
         var rb1 = currCharacter.GetComponent<Rigidbody2D>();
         rb1.constraints = RigidbodyConstraints2D.FreezeRotation;
-        currController.setVelocity(storedVelo);
 
         var otherController = otherCharacter.GetComponent<PlayerController>();
         otherController.controlEnabled = false;
@@ -51,10 +61,7 @@ public class CameraController : MonoBehaviour
         var rb2 = otherCharacter.GetComponent<Rigidbody2D>();
         rb2.constraints = RigidbodyConstraints2D.FreezeAll;
         otherController.setStopJump(true);
-        storedVelo = otherController.getVelocity();
-
-
-
+        otherController.setVelocity(new Vector2 (0,0));
     }
 
     // moves the camera and allows player to begin controlling the other character
@@ -64,12 +71,12 @@ public class CameraController : MonoBehaviour
         if (currCharacter == character1)
         {
             // move camera down
-            cameraPosition.y = cameraPosition.y - 18.785f;
+            cameraPosition.y = cameraPosition.y - worldDistance;
         }
         else
         {
             // move camera up
-            cameraPosition.y = cameraPosition.y + 18.785f;
+            cameraPosition.y = cameraPosition.y + worldDistance;
         }
 
         this.managedCamera.transform.position = cameraPosition;
@@ -79,6 +86,60 @@ public class CameraController : MonoBehaviour
         otherCharacter = temp;
 
         setMovementPerms();
+    }
+
+    public void combineWorlds()
+    {
+        var cameraPosition = this.managedCamera.transform.position;
+        if (currCharacter == character1)
+        {
+            // Move camera right
+            cameraPosition.x = cameraPosition.x + 25.0f;
+        }
+        else
+        {
+            // Move camera up and right.
+            cameraPosition.y = cameraPosition.y + worldDistance;
+            cameraPosition.x = cameraPosition.x + 25.0f;
+        }
+
+        this.managedCamera.transform.position = cameraPosition;
+
+        currCharacter = character3;
+        character1.GetComponent<PlayerController>().controlEnabled = false;
+        character2.GetComponent<PlayerController>().controlEnabled = false;
+        character3.GetComponent<PlayerController>().controlEnabled = true;
+        var currController = currCharacter.GetComponent<PlayerController>();
+        currController.controlEnabled = true;
+        // enable gravity to "resume" world
+        var rb1 = currCharacter.GetComponent<Rigidbody2D>();
+        rb1.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    private void UnCombineWorlds()
+    {
+        var cameraPosition = this.managedCamera.transform.position;
+        // move camera back to world 1
+        cameraPosition.x = cameraPosition.x - 25.0f;
+
+        this.managedCamera.transform.position = cameraPosition;
+
+        // enable character 1 and disable character 3
+        currCharacter = character1;
+        otherCharacter = character2;
+
+        var c3Controller = character3.GetComponent<PlayerController>();
+        c3Controller.controlEnabled = false;
+        // disable gravity to "pause" world
+        var rb3 = c3Controller.GetComponent<Rigidbody2D>();
+        rb3.constraints = RigidbodyConstraints2D.FreezeAll;
+        c3Controller.setStopJump(true);
+        c3Controller.setVelocity(new Vector2(0,0));
+
+        setMovementPerms();
+
+        GameObject.Find("Level Controller").GetComponent<LevelController>().UnCombineWorlds();
+
     }
 
     // Returns true if the GameObject c is the same as the active character.
