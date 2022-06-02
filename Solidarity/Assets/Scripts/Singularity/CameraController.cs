@@ -165,4 +165,10 @@ public class CameraController : MonoBehaviour
         
         return false;
     }
+
+    // Returns the Game Object of the active character.
+    public GameObject activeCharacter()
+    {
+        return currCharacter;
+    }
 }

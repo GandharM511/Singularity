@@ -46,6 +46,7 @@ namespace Platformer.Mechanics
             var player = other.gameObject.GetComponent<PlayerController>();
             if (player != null) 
             {
+                AudioSource.PlayClipAtPoint(tokenCollectAudio, transform.position);
                 OnPlayerEnter(player);
                 if (player.playerId == 1)
                 {

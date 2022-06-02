@@ -1939,7 +1939,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
       propertyPath: m_Layer
@@ -3056,6 +3056,7 @@ MonoBehaviour:
   goal: {fileID: 2044600674}
   platformPrefab: {fileID: 5098597564511278597, guid: ea178d686b2549b4bb1d6bc4dcdc790e,
     type: 3}
+  levelController: {fileID: 545662140}
 --- !u!1 &1823202021
 GameObject:
   m_ObjectHideFlags: 0

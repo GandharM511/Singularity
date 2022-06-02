@@ -13,6 +13,8 @@ namespace Singularity
 
         public GameObject platformPrefab;
 
+        public GameObject levelController;
+
 
         // The world is to be created when the level starts.
         void Start()
@@ -29,6 +31,8 @@ namespace Singularity
                     GameObject newObj = Instantiate(goal, transform, true);
                     newObj.transform.localPosition = new Vector3(0,0,0) + child.gameObject.transform.localPosition;
                     newObj.transform.localScale = child.gameObject.transform.localScale;
+
+                    levelController.GetComponent<LevelComplete>().setWorld3Goal(newObj.transform.GetChild(0).gameObject);
                 }
             }
 
@@ -44,6 +48,8 @@ namespace Singularity
                     GameObject newObj = Instantiate(goal, transform, true);
                     newObj.transform.localPosition = new Vector3(0,0,0) + child.gameObject.transform.localPosition;
                     newObj.transform.localScale = child.gameObject.transform.localScale;
+
+                    levelController.GetComponent<LevelComplete>().setWorld3Goal(newObj.transform.GetChild(0).gameObject);
                 }
             }
         }

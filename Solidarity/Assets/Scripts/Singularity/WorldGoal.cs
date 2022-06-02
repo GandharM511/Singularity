@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Platformer.Mechanics;
 
 namespace Singularity
 {
@@ -15,7 +16,7 @@ namespace Singularity
         // Check that character is in the collision zone.
         public void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.gameObject == character)
+            if (character != null && col.gameObject == character)
             {
                 completed = true;
             }
@@ -24,7 +25,7 @@ namespace Singularity
         // Check that character left collision zone.
         public void OnTriggerExit2D(Collider2D col)
         {
-            if (col.gameObject == character)
+            if (character != null && col.gameObject == character)
             {
                 completed = false;
             }
