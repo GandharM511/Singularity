@@ -25,7 +25,8 @@ public class CameraController : MonoBehaviour
         currCharacter = character1;
         otherCharacter = character2;
 
-        character3.GetComponent<PlayerController>().controlEnabled = false;
+        if (character3 != null)
+            character3.GetComponent<PlayerController>().controlEnabled = false;
 
         setMovementPerms();
     }
@@ -90,56 +91,61 @@ public class CameraController : MonoBehaviour
 
     public void combineWorlds()
     {
-        var cameraPosition = this.managedCamera.transform.position;
-        if (currCharacter == character1)
+        if (character3 != null)
         {
-            // Move camera right
-            cameraPosition.x = cameraPosition.x + 25.0f;
-        }
-        else
-        {
-            // Move camera up and right.
-            cameraPosition.y = cameraPosition.y + worldDistance;
-            cameraPosition.x = cameraPosition.x + 25.0f;
-        }
+            var cameraPosition = this.managedCamera.transform.position;
+            if (currCharacter == character1)
+            {
+                // Move camera right
+                cameraPosition.x = cameraPosition.x + 25.0f;
+            }
+            else
+            {
+                // Move camera up and right.
+                cameraPosition.y = cameraPosition.y + worldDistance;
+                cameraPosition.x = cameraPosition.x + 25.0f;
+            }
 
-        this.managedCamera.transform.position = cameraPosition;
+            this.managedCamera.transform.position = cameraPosition;
 
-        currCharacter = character3;
-        character1.GetComponent<PlayerController>().controlEnabled = false;
-        character2.GetComponent<PlayerController>().controlEnabled = false;
-        character3.GetComponent<PlayerController>().controlEnabled = true;
-        var currController = currCharacter.GetComponent<PlayerController>();
-        currController.controlEnabled = true;
-        // enable gravity to "resume" world
-        var rb1 = currCharacter.GetComponent<Rigidbody2D>();
-        rb1.constraints = RigidbodyConstraints2D.FreezeRotation;
+            currCharacter = character3;
+            character1.GetComponent<PlayerController>().controlEnabled = false;
+            character2.GetComponent<PlayerController>().controlEnabled = false;
+            character3.GetComponent<PlayerController>().controlEnabled = true;
+            var currController = currCharacter.GetComponent<PlayerController>();
+            currController.controlEnabled = true;
+            // enable gravity to "resume" world
+            var rb1 = currCharacter.GetComponent<Rigidbody2D>();
+            rb1.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 
     private void UnCombineWorlds()
     {
-        var cameraPosition = this.managedCamera.transform.position;
-        // move camera back to world 1
-        cameraPosition.x = cameraPosition.x - 25.0f;
+        if (character3 != null)
+        {
+            var cameraPosition = this.managedCamera.transform.position;
+            // move camera back to world 1
+            cameraPosition.x = cameraPosition.x - 25.0f;
 
-        this.managedCamera.transform.position = cameraPosition;
+            this.managedCamera.transform.position = cameraPosition;
 
-        // enable character 1 and disable character 3
-        currCharacter = character1;
-        otherCharacter = character2;
+            // enable character 1 and disable character 3
+            currCharacter = character1;
+            otherCharacter = character2;
 
-        var c3Controller = character3.GetComponent<PlayerController>();
-        c3Controller.controlEnabled = false;
-        // disable gravity to "pause" world
-        var rb3 = c3Controller.GetComponent<Rigidbody2D>();
-        rb3.constraints = RigidbodyConstraints2D.FreezeAll;
-        c3Controller.setStopJump(true);
-        c3Controller.setVelocity(new Vector2(0,0));
+            var c3Controller = character3.GetComponent<PlayerController>();
+            c3Controller.controlEnabled = false;
+            // disable gravity to "pause" world
+            var rb3 = c3Controller.GetComponent<Rigidbody2D>();
+            rb3.constraints = RigidbodyConstraints2D.FreezeAll;
+            c3Controller.setStopJump(true);
+            c3Controller.setVelocity(new Vector2(0,0));
 
-        setMovementPerms();
+            setMovementPerms();
 
-        GameObject.Find("Level Controller").GetComponent<LevelController>().UnCombineWorlds();
-
+            GameObject.Find("Level Controller").GetComponent<LevelController>().UnCombineWorlds();
+        }
     }
 
     // Returns true if the GameObject c is the same as the active character.

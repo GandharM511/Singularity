@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84288033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.17, y: 4.304001, z: -2.566747}
+  m_LocalPosition: {x: -5.11, y: 3.79, z: -2.566747}
   m_LocalScale: {x: 4.0184965, y: 0.3658174, z: 1}
   m_Children: []
   m_Father: {fileID: 771443543}
@@ -1231,6 +1231,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: jumpTakeOffSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 212064061491315838, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
       propertyPath: m_Color.b
@@ -1521,12 +1526,12 @@ PrefabInstance:
     - target: {fileID: 8557601108313535293, guid: fafdf7ff385af0c41bb88a933e5ffb77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.26
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 8557601108313535293, guid: fafdf7ff385af0c41bb88a933e5ffb77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.71
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: 8557601108313535293, guid: fafdf7ff385af0c41bb88a933e5ffb77,
         type: 3}
@@ -1787,6 +1792,11 @@ PrefabInstance:
       propertyPath: controlEnabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: jumpTakeOffSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 212064061491315838, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
       propertyPath: m_Color.b
@@ -1988,6 +1998,11 @@ PrefabInstance:
         type: 3}
       propertyPath: controlEnabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: jumpTakeOffSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 212064061491315838, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
@@ -2500,7 +2515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443264792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.17, y: 8.024, z: -2.566747}
+  m_LocalPosition: {x: -3.9099998, y: 6.344, z: -2.566747}
   m_LocalScale: {x: 4.0184965, y: 0.3658174, z: 1}
   m_Children: []
   m_Father: {fileID: 771443543}
