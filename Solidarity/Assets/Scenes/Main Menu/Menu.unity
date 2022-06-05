@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &114561741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -208,7 +208,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1099,7 +1099,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1818,7 +1818,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -1876,12 +1876,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 3352379cc61d3ad4eb1377477c19247a, type: 2}
-  masterSlider: {fileID: 1076455107}
-  musicSlider: {fileID: 753184258}
-  sfxSlider: {fileID: 1977095867}
-  masterVolumeText: {fileID: 779382580}
-  musicVolumeText: {fileID: 1329225719}
-  sfxVolumeText: {fileID: 1088010010}
+  masterSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  masterVolumeText: {fileID: 0}
+  musicVolumeText: {fileID: 0}
+  sfxVolumeText: {fileID: 0}
 --- !u!1 &753184256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,7 +1986,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1329225718}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SliderTextToValue, Assembly-CSharp
         m_MethodName: ShowSliderValue
         m_Mode: 0
@@ -2357,7 +2357,6 @@ GameObject:
   - component: {fileID: 779382579}
   - component: {fileID: 779382581}
   - component: {fileID: 779382580}
-  - component: {fileID: 779382582}
   m_Layer: 5
   m_Name: MasterVolumeValueText
   m_TagString: Untagged
@@ -2483,19 +2482,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779382578}
   m_CullTransparentMesh: 1
---- !u!114 &779382582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779382578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7098d4282beaae24eb222613a077eedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderUIList: []
 --- !u!1 &833141192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,8 +2649,8 @@ RectTransform:
   m_Father: {fileID: 2084322417}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2738,8 +2724,8 @@ RectTransform:
   m_Father: {fileID: 2069597675}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2885,7 +2871,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 779382582}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SliderTextToValue, Assembly-CSharp
         m_MethodName: ShowSliderValue
         m_Mode: 0
@@ -2908,7 +2894,6 @@ GameObject:
   - component: {fileID: 1088010008}
   - component: {fileID: 1088010011}
   - component: {fileID: 1088010010}
-  - component: {fileID: 1088010009}
   m_Layer: 5
   m_Name: SFXVolumeValueText
   m_TagString: Untagged
@@ -2935,19 +2920,6 @@ RectTransform:
   m_AnchoredPosition: {x: 192, y: 108}
   m_SizeDelta: {x: -134.59998, y: -11}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1088010009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088010007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7098d4282beaae24eb222613a077eedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderUIList: []
 --- !u!114 &1088010010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3099,7 +3071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3399,7 +3371,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3590,7 +3562,6 @@ GameObject:
   - component: {fileID: 1329225717}
   - component: {fileID: 1329225720}
   - component: {fileID: 1329225719}
-  - component: {fileID: 1329225718}
   m_Layer: 5
   m_Name: MusicVolumeValueText
   m_TagString: Untagged
@@ -3617,19 +3588,6 @@ RectTransform:
   m_AnchoredPosition: {x: 192, y: 108}
   m_SizeDelta: {x: -134.59998, y: -11}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1329225718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329225716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7098d4282beaae24eb222613a077eedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderUIList: []
 --- !u!114 &1329225719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3781,7 +3739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4545,7 +4503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1571653299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4948,7 +4906,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1088010009}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SliderTextToValue, Assembly-CSharp
         m_MethodName: ShowSliderValue
         m_Mode: 0
@@ -4992,8 +4950,8 @@ RectTransform:
   m_Father: {fileID: 1187217203}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5250,6 +5208,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1855338992, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
+      propertyPath: sfxSlider
+      value: 
+      objectReference: {fileID: 1977095867}
+    - target: {fileID: 1855338992, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 753184258}
+    - target: {fileID: 1855338992, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
+      propertyPath: masterSlider
+      value: 
+      objectReference: {fileID: 1076455107}
+    - target: {fileID: 1855338992, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
+      propertyPath: sfxVolumeText
+      value: 
+      objectReference: {fileID: 1088010010}
+    - target: {fileID: 1855338992, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
+      propertyPath: musicVolumeText
+      value: 
+      objectReference: {fileID: 1329225719}
+    - target: {fileID: 1855338992, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
+      propertyPath: masterVolumeText
+      value: 
+      objectReference: {fileID: 779382580}
     - target: {fileID: 6513142533595350241, guid: 66a8cbb4f6deb8e408190b9b01694ee5,
         type: 3}
       propertyPath: m_RootOrder
@@ -5310,5 +5292,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8323732086081374482, guid: 66a8cbb4f6deb8e408190b9b01694ee5,
+        type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 3352379cc61d3ad4eb1377477c19247a,
+        type: 2}
+    - target: {fileID: 8323732086081374482, guid: 66a8cbb4f6deb8e408190b9b01694ee5,
+        type: 3}
+      propertyPath: sfxSlider
+      value: 
+      objectReference: {fileID: 1977095867}
+    - target: {fileID: 8323732086081374482, guid: 66a8cbb4f6deb8e408190b9b01694ee5,
+        type: 3}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 753184258}
+    - target: {fileID: 8323732086081374482, guid: 66a8cbb4f6deb8e408190b9b01694ee5,
+        type: 3}
+      propertyPath: masterSlider
+      value: 
+      objectReference: {fileID: 1076455107}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
