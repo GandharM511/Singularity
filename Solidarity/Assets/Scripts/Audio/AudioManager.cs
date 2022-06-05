@@ -10,12 +10,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioMixer mixer;
     [SerializeField] Slider masterSlider;
-    [SerializeField] Slider musicSlider;
-    [SerializeField] Slider sfxSlider;
 
     public const string MASTER_KEY = "masterVolume";
-    public const string MUSIC_KEY = "musicVolume";
-    public const string SFX_KEY = "sfxVolume";
 
     void Awake()
     {
@@ -36,10 +32,8 @@ public class AudioManager : MonoBehaviour
     void LoadVolume() // Volume saved in VolumeSettings.cs
     {
         float masterVolume = PlayerPrefs.GetFloat(MASTER_KEY, -40.0f);
-        float musicVolume = PlayerPrefs.GetFloat(MUSIC_KEY, -40.0f);
-        float sfxVolume = PlayerPrefs.GetFloat(SFX_KEY, -40.0f);
+        Debug.Log("Load Volume");
+        Debug.Log(masterVolume);
         mixer.SetFloat(VolumeSettings.MIXER_MASTER, masterVolume);
-        mixer.SetFloat(VolumeSettings.MIXER_MUSIC, musicVolume);
-        mixer.SetFloat(VolumeSettings.MIXER_SFX, sfxVolume);
     }
 }
