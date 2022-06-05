@@ -5,20 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    /// <summary>
+    /// Method <c>PlayGame</c> loads the next scene from the main menu
+    /// when clicking the "Play" button.
+    /// </summary>
     public void PlayGame() 
     {
-        Debug.Log("playgame");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
