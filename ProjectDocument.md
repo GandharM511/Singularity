@@ -53,7 +53,7 @@ The back ground was to be changed for each level to give hints but changing one 
 ## Audio
 
 **List your assets including their sources and licenses.**
-**Geoffrey Mohn** I am unsure of all the assets and sources as mostly Chris and Richmond implemented sounds.
+**Geoffrey Mohn** We used Unity the unity tutorial and modified the sound samples and music to bet fit the tone.
 
 **Describe the implementation of your audio system.**
 We have an audio manager script and audio source on prefabs that play a sound based on the state of said prefab. This is linked with the animation. There is a looping song that plays throughout the levels.
