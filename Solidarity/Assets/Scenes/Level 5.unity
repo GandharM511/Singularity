@@ -1253,6 +1253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   world1Goal: {fileID: 1052082766}
   world2Goal: {fileID: 807294247}
+  finishSound: {fileID: 8300000, guid: 743f1b6f026d23344a695dbae5f4fade, type: 3}
 --- !u!33 &545662142
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4004,6 +4005,7 @@ MonoBehaviour:
   platformPrefab: {fileID: 5098597564511278597, guid: ea178d686b2549b4bb1d6bc4dcdc790e,
     type: 3}
   levelController: {fileID: 545662140}
+  world3Enabled: 1
 --- !u!1 &1823202021
 GameObject:
   m_ObjectHideFlags: 0

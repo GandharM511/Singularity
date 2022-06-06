@@ -231,7 +231,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17452809}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-Levels
 --- !u!1001 &50236514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,6 +377,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1441530801686868038, guid: 2b1befacd43b6fd49b719f67415f4aa7,
+        type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 86485630}
     - target: {fileID: 3509193460797478027, guid: 2b1befacd43b6fd49b719f67415f4aa7,
         type: 3}
       propertyPath: m_Name
@@ -536,7 +540,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9d985be1ea8d4a1419138a6aa35f7173,
         type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1441530801686868038, guid: 2b1befacd43b6fd49b719f67415f4aa7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2b1befacd43b6fd49b719f67415f4aa7, type: 3}
 --- !u!1 &86485629 stripped
 GameObject:
@@ -1055,6 +1060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   world1Goal: {fileID: 1052082766}
   world2Goal: {fileID: 807294247}
+  finishSound: {fileID: 8300000, guid: 743f1b6f026d23344a695dbae5f4fade, type: 3}
 --- !u!33 &545662142
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1122,9 +1128,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545662140}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 3352379cc61d3ad4eb1377477c19247a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 5833894e2899f1840ac04193ca462e39, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.19
@@ -1769,7 +1776,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814366452}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-Levels
 --- !u!224 &984384605 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3509193460164749244, guid: 2b1befacd43b6fd49b719f67415f4aa7,
@@ -3040,6 +3046,7 @@ MonoBehaviour:
   platformPrefab: {fileID: 5098597564511278597, guid: ea178d686b2549b4bb1d6bc4dcdc790e,
     type: 3}
   levelController: {fileID: 545662140}
+  world3Enabled: 1
 --- !u!1 &1823202021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,24 +3241,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
---- !u!1 &1825305816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6513142533595350247, guid: 66a8cbb4f6deb8e408190b9b01694ee5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1825305815}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1825305817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825305816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7967f23b22fc14ebd98c0b7b31f49f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1846174110
 GameObject:
   m_ObjectHideFlags: 0
