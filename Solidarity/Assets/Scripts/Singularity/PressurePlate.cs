@@ -33,31 +33,32 @@ namespace Singularity
         // something is standing on the plate
         void OnTriggerEnter2D(Collider2D col)
         {
-            // TODO: play pressure plate down audio
             if (col.gameObject.tag != "Floor")
             {
+                // Play audio.
                 AudioSource.PlayClipAtPoint(pressureOn, transform.position);
 
+                // Move object down.
                 Vector3 pos = gameObject.transform.position;
                 pos.y -= deltaY;
                 gameObject.transform.position = pos;
+                // Notify On.
                 pressurePlatePublisher.NotifyOn();
             }
-            // maybe move object down slightly??
         }
 
         // the object has been moved off the plate
         void OnTriggerExit2D(Collider2D col)
         {
-            // TODO: play pressure plate up audio
-            // move object back up?
             if (col.gameObject.tag != "Floor")
             {
                 AudioSource.PlayClipAtPoint(pressureOff, transform.position);
 
+                // Move object back up.
                 Vector3 pos = gameObject.transform.position;
                 pos.y += deltaY;
                 gameObject.transform.position = pos;
+                // Notify Off.
                 pressurePlatePublisher.NotifyOff();
             }
         }
