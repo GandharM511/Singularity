@@ -6,7 +6,7 @@ Specimen 153, an intergalatic anomaly, was captured by hostile aliens to be test
 Singularity is a 2D Puzzle Platformer that takes place between two seperate realms. Players must traverse these connected dimenstions to complete each trial, all in hope to become one again.
 
 ## Trailer
-[![Trailer](https://photos.app.goo.gl/ipwyypoTgwSJmmBo6)](https://www.youtube.com/watch?v=qeFG8bBCwGo)
+[![Trailer](https://ibb.co/hy1qVb5)](https://www.youtube.com/watch?v=qeFG8bBCwGo)
 
 ## Images
 
