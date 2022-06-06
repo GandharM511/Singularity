@@ -2,7 +2,9 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+**Specimen 153, an intergalatic anomaly, was captured by hostile aliens to be tested on in their lab. They were subjugated to deadly experiments and tests, one of which broke their existence in two. While split apart, the specimen must now escape the aliens' lab to finally become one again - a Singularity.
+
+Singularity is a 2D Puzzle Platformer that takes place between two seperate realms. Players must traverse these connected dimenstions to complete each trial, all in hope to become one again.**
 
 ## Gameplay Explanation ##
 
@@ -30,11 +32,19 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## Movement/Physics
 
-**Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
+**Christopher Havens** In general, Singularity uses the standard physics model, with just a few modifications. With the premise of the game being that there are two seperate characters operating in 2 different wolrds that somehow inpact the other, I had the challenge of allowing the player to switch between characters. The modification to the physics model is here, when the player is switched from we (freeze its movement)[https://github.com/orange-shasta/Singularity/blob/344aa61e4df5545b5f65c498504b2339cd0e880a/Solidarity/Assets/Scripts/Singularity/CameraController.cs#L63] and [lock it in mid air](https://github.com/orange-shasta/Singularity/blob/f2d0d9d1bf3ec897f6b02023d1f0ca2cbe80215b/Solidarity/Assets/Scripts/Mechanics/KinematicObject.cs#L105). This was done by just adding an if condition to a kinematic object, if it is frozen then don't move it! This is so that the character doesn't move at all when the camera is not focused on their world. This is the main adaptation our game needed to the physics model. A few more notes though, all platforms move with zero acceleration and a constant speed. 
+
+The last task I had to complete to get the physics just right for our game was setting up the correct player movements speed and jumping heights. The core of our game comes down to jumping height and running speeds, levels are designed such that the player can make some jumps and cannot make other jumps so getting these values right and sticking too them was crucial. I chose the values off of what felt the best for the size of our character compared to the size of the world.
+
+I worked very closely with a player controller as well as a camera controller that allows us to see the different worlds when we switch characters. When the player wants to switch to the other character we take away the ability to control this character. This is used by setting a [flag (control enabled)](https://github.com/orange-shasta/Singularity/blob/f2d0d9d1bf3ec897f6b02023d1f0ca2cbe80215b/Solidarity/Assets/Scripts/Singularity/CameraController.cs#L54). 
+
+A very similar thing had to be done when the player wants to combine the two worlds into a third world. The way the scene is set up is the 3rd world is just a 3rd seperate player game object whose control is disabled until the user collects the powerups and combines the worlds!
+
+Throughout this role I worked closely with input and writing the logic behind some of these mechanics.
 
 ## Animation and Visuals
 
-**Geoffrey Mohn** The animation and visuals came from a unity game tutorial. Originally planning to add assets from the Unity store from Mimu Studio, but implementing it with the already existing scripts and controllers became very convaluted and difficult.
+**Geoffrey Mohn** The animation and visuals came from a unity game [tutorial](https://learn.unity.com/project/2d-platformer-template). Originally planning to add assets from the Unity store from Mimu Studio, but implementing it with the already existing scripts and controllers became very convaluted and difficult.
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 The back ground was to be changed for each level to give hints but changing one back ground would change the rest all of them. Reskinning any platforms or walls would change every platform and wall.
 
@@ -95,4 +105,7 @@ When we made our build for the playtest, we were not aware of a variety of bugs 
 
 ## Game Feel
 
-**Document what you added to and how you tweaked your game to improve its game feel.**
+**Christopher Havens**
+Because I also worked on Movement and Physics a lot of my roles overlapped with each other. This was helpful because it was easy to see my role within the team. I added scripts that gave functionality to Switches and Pressure Plates. Both of these game objects implement a publisher in a publisher subscriber design pattern. 
+
+Document what you added to and how you tweaked your game to improve its game feel.
