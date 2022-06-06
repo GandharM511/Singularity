@@ -11,11 +11,13 @@ namespace Singularity
     {
         public GameObject world1Goal;
         public GameObject world2Goal;
+        public AudioClip finishSound;
         private GameObject world3Goal = null;
 
         private WorldGoal worldScript1;
         private WorldGoal worldScript2;
         private WorldGoal worldScript3 = null;
+
 
         private bool levelCompleted = false;
 
@@ -48,6 +50,7 @@ namespace Singularity
                     // stop the player control and do an animation.
                     // play finish level sound.
                     levelCompleted = true;
+                    AudioSource.PlayClipAtPoint(finishSound, transform.position);
                     Invoke("CompleteLevel",  1f);
                 }
             }
@@ -60,6 +63,7 @@ namespace Singularity
                     // stop the player control and do an animation
                     // play finish level sound.
                     levelCompleted = true;
+                    AudioSource.PlayClipAtPoint(finishSound, transform.position);
                     Invoke("CompleteLevel", 1f);
                 }
             }

@@ -53,12 +53,14 @@ namespace Singularity
                     // TODO: play switch audio
                     if (switchedOn == false)
                     {
+                        gameObject.transform.GetChild(0).transform.Rotate(0f, 0f, 65.991f, Space.Self);
                         // When the switch is turned on we must call notify On.
                         switchPublisher.NotifyOn();
                         switchedOn = true;
                     }
                     else if (switchedOn == true)
                     {
+                        gameObject.transform.GetChild(0).transform.Rotate(0f, 0f, -65.991f, Space.Self);
                         // When the switch is turned off we must call notify Off.
                         switchPublisher.NotifyOff();
                         switchedOn = false;
