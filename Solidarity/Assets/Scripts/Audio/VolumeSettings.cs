@@ -24,18 +24,20 @@ public class VolumeSettings : MonoBehaviour
     }
 
     void OnDisable()
+    { 
+        PlayerPrefs.Save();
+    }
+
+    void Update()
     {
-        PlayerPrefs.SetFloat(AudioManager.MASTER_KEY, masterSlider.value);
-        Debug.Log("VolumeSettings On Disable");
-        Debug.Log(PlayerPrefs.GetFloat(AudioManager.MASTER_KEY, 69));
+        Debug.Log("VolumeSettings On Update");
+        Debug.Log(PlayerPrefs.GetFloat(AudioManager.MASTER_KEY, 69));        
     }
 
     void SetMasterVolume(float value)
     {
         mixer.SetFloat(MIXER_MASTER, value);
         masterVolumeText.text = Mathf.RoundToInt(Mathf.Abs((value / -80 * 100) - 100)) + "%";
+        PlayerPrefs.SetFloat(AudioManager.MASTER_KEY, masterSlider.value);
     }
-
-
-
 }

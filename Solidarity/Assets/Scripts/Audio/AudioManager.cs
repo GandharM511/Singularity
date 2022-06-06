@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioMixer mixer;
     [SerializeField] Slider masterSlider;
 
-    public const string MASTER_KEY = "masterVolume";
+    public const string MASTER_KEY = "MasterVolume";
 
     void Awake()
     {
