@@ -3,7 +3,10 @@ guid: 8dd74585081bde84c85828c6800d2233
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - switchObject: {instanceID: 0}
+  - switchOn: {fileID: 8300000, guid: e6c35ea4e11e7fa4485c305d91719e77, type: 3}
+  - switchOff: {fileID: 8300000, guid: f028bd6a4aeebf3498242543758a9081, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

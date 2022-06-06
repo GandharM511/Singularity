@@ -192,6 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   switchObject: {fileID: 3434442761475442949}
+  switchOn: {fileID: 8300000, guid: e6c35ea4e11e7fa4485c305d91719e77, type: 3}
+  switchOff: {fileID: 8300000, guid: f028bd6a4aeebf3498242543758a9081, type: 3}
 --- !u!61 &3434442761475442954
 BoxCollider2D:
   m_ObjectHideFlags: 0

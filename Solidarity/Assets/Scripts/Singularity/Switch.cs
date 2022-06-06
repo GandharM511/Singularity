@@ -11,6 +11,10 @@ namespace Singularity
     {
         private OnOffPublisher switchPublisher = new OnOffPublisher();
         public GameObject switchObject;
+
+        public AudioClip switchOn;
+        public AudioClip switchOff;
+
         private bool switchedOn = false;
         private bool collided = false;
         private GameObject characterTouchingSwitch = null;
@@ -53,6 +57,7 @@ namespace Singularity
                     // TODO: play switch audio
                     if (switchedOn == false)
                     {
+                        AudioSource.PlayClipAtPoint(switchOn, transform.position);
                         gameObject.transform.GetChild(0).transform.Rotate(0f, 0f, 65.991f, Space.Self);
                         // When the switch is turned on we must call notify On.
                         switchPublisher.NotifyOn();
@@ -60,6 +65,7 @@ namespace Singularity
                     }
                     else if (switchedOn == true)
                     {
+                        AudioSource.PlayClipAtPoint(switchOff, transform.position);
                         gameObject.transform.GetChild(0).transform.Rotate(0f, 0f, -65.991f, Space.Self);
                         // When the switch is turned off we must call notify Off.
                         switchPublisher.NotifyOff();
