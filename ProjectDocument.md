@@ -34,9 +34,9 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## Animation and Visuals
 
-**List your assets including their sources and licenses.**
-
+**Geoffrey Mohn** The animation and visuals came from a unity game tutorial. Originally planning to add assets from the Unity store from Mimu Studio, but implementing it with the already existing scripts and controllers became very convaluted and difficult.
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+The back ground was to be changed for each level to give hints but changing one back ground would change the rest all of them. Reskinning any platforms or walls would change every platform and wall.
 
 ## Input
 
@@ -53,10 +53,12 @@ You should replay any **bold text** with your relevant information. Liberally us
 ## Audio
 
 **List your assets including their sources and licenses.**
+**Geoffrey Mohn** We used Unity the unity tutorial and modified the sound samples and music to bet fit the tone.
 
 **Describe the implementation of your audio system.**
-
+We have an audio manager script and audio source on prefabs that play a sound based on the state of said prefab. This is linked with the animation. There is a looping song that plays throughout the levels.
 **Document the sound style.** 
+Sci-fi sound style to connect with the space theme.
 
 ## Gameplay Testing
 

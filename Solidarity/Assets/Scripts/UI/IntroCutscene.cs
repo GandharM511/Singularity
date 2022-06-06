@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class IntroCutscene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float timer = 10.0f;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (timer > 0.0f)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            
+        }
     }
 }

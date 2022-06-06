@@ -52,7 +52,7 @@ namespace Singularity
             // check that there is something touching the switch and that it is the active character
             if (collided && characterTouchingSwitch != null && cameraController.GetComponent<CameraController>().isCharacterActive(characterTouchingSwitch))
             {
-                if (Input.GetButtonDown("Fire2"))
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.X))
                 {
                     // TODO: play switch audio
                     if (switchedOn == false)

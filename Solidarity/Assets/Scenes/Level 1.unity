@@ -231,7 +231,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17452809}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-Levels
 --- !u!1001 &50236514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,6 +368,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 7492352186851835081, guid: 5fe69bf1157461e40931d80d66e9ee96,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492352186851835081, guid: 5fe69bf1157461e40931d80d66e9ee96,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -211
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fe69bf1157461e40931d80d66e9ee96, type: 3}
 --- !u!1001 &86485628
@@ -378,6 +387,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1441530801686868038, guid: 2b1befacd43b6fd49b719f67415f4aa7,
+        type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 86485630}
     - target: {fileID: 3509193460797478027, guid: 2b1befacd43b6fd49b719f67415f4aa7,
         type: 3}
       propertyPath: m_Name
@@ -536,7 +550,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9d985be1ea8d4a1419138a6aa35f7173,
         type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1441530801686868038, guid: 2b1befacd43b6fd49b719f67415f4aa7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2b1befacd43b6fd49b719f67415f4aa7, type: 3}
 --- !u!1 &86485629 stripped
 GameObject:
@@ -1055,6 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   world1Goal: {fileID: 1052082766}
   world2Goal: {fileID: 807294247}
+  finishSound: {fileID: 8300000, guid: 743f1b6f026d23344a695dbae5f4fade, type: 3}
 --- !u!33 &545662142
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1122,9 +1138,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545662140}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 3352379cc61d3ad4eb1377477c19247a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 5833894e2899f1840ac04193ca462e39, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.19
@@ -1769,7 +1786,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814366452}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-Levels
 --- !u!224 &984384605 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3509193460164749244, guid: 2b1befacd43b6fd49b719f67415f4aa7,
@@ -2480,7 +2496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 247, y: 68}
+  m_AnchoredPosition: {x: 223, y: 107}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1367213380
@@ -2503,7 +2519,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use the WASD or Arrow Keys to Move
+  m_text: 'Use the A/D or Left/Right Arrow Keys to Move
+
+    Use the Z key or Left
+    Shift to Switch Characters'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d393f12bd75574ef991a7a2c74b29c69, type: 2}
   m_sharedMaterial: {fileID: 21623678745554260, guid: d393f12bd75574ef991a7a2c74b29c69,
@@ -3040,6 +3059,7 @@ MonoBehaviour:
   platformPrefab: {fileID: 5098597564511278597, guid: ea178d686b2549b4bb1d6bc4dcdc790e,
     type: 3}
   levelController: {fileID: 545662140}
+  world3Enabled: 1
 --- !u!1 &1823202021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,24 +3254,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
---- !u!1 &1825305816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6513142533595350247, guid: 66a8cbb4f6deb8e408190b9b01694ee5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1825305815}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1825305817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825305816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7967f23b22fc14ebd98c0b7b31f49f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1846174110
 GameObject:
   m_ObjectHideFlags: 0
