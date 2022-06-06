@@ -1042,7 +1042,6 @@ GameObject:
   - component: {fileID: 545662146}
   - component: {fileID: 545662145}
   - component: {fileID: 545662147}
-  - component: {fileID: 545662148}
   m_Layer: 0
   m_Name: Level Controller
   m_TagString: Untagged
@@ -1220,21 +1219,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &545662148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545662140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7319d7fa88624ca609e8996345c41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: 3352379cc61d3ad4eb1377477c19247a, type: 2}
-  masterSlider: {fileID: 50236516}
-  masterVolumeText: {fileID: 50236515}
 --- !u!1001 &572412409
 PrefabInstance:
   m_ObjectHideFlags: 0
