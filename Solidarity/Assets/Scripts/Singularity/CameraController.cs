@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !PauseMenu.isPaused)
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Z)) && !PauseMenu.isPaused)
         {
             LevelController levelController = GameObject.Find("Level Controller").GetComponent<LevelController>();
             if (levelController == null || levelController.getWorldCombineState() == false)

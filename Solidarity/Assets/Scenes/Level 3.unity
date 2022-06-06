@@ -2952,8 +2952,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: 124}
-  m_SizeDelta: {x: 524.8103, y: 40.3515}
+  m_AnchoredPosition: {x: 0.000015259, y: 124}
+  m_SizeDelta: {x: 709.5607, y: 43.3802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1354044911
 MonoBehaviour:
@@ -2975,8 +2975,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Move platforms by \ninteracting with switches using the E key\nstanding
-    on pressure plates"
+  m_text: "Move platforms by \ninteracting with switches using the E key or X Key
+    \nor standing on pressure plates"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d393f12bd75574ef991a7a2c74b29c69, type: 2}
   m_sharedMaterial: {fileID: 21623678745554260, guid: d393f12bd75574ef991a7a2c74b29c69,
