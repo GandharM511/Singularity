@@ -33,7 +33,7 @@ namespace Singularity
         // Checks for button press to enable power up if both characters are standing on their own respective item.
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.X))
             {
                 if (standingOn1 && standingOn2)
                 {
