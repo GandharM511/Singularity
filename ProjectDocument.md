@@ -51,9 +51,11 @@ The back ground was to be changed for each level to give hints but changing one 
 # Sub-Roles
 
 ## Audio
-
+**Geoffrey Mohn**
 **List your assets including their sources and licenses.**
-**Geoffrey Mohn** We used Unity the unity tutorial and modified the sound samples and music to bet fit the tone.
+Used the Legend of Zelda sound when completing a level
+looping music from the tutorial
+ We used Unity the unity tutorial and modified the sound samples and music to bet fit the tone.
 
 **Describe the implementation of your audio system.**
 We have an audio manager script and audio source on prefabs that play a sound based on the state of said prefab. This is linked with the animation. There is a looping song that plays throughout the levels.
