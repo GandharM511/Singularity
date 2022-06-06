@@ -51,7 +51,7 @@ namespace Singularity
                     // play finish level sound.
                     levelCompleted = true;
                     AudioSource.PlayClipAtPoint(finishSound, transform.position);
-                    Invoke("CompleteLevel",  1f);
+                    Invoke("CompleteLevel",  2f);
                 }
             }
             else
@@ -64,7 +64,7 @@ namespace Singularity
                     // play finish level sound.
                     levelCompleted = true;
                     AudioSource.PlayClipAtPoint(finishSound, transform.position);
-                    Invoke("CompleteLevel", 1f);
+                    Invoke("CompleteLevel", 2f);
                 }
             }
         }
