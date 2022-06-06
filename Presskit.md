@@ -8,6 +8,8 @@ Singularity is a 2D Puzzle Platformer that takes place between two seperate real
 ## Trailer
 [![Trailer](https://github.com/orange-shasta/Singularity/blob/340eed9f92e86f982d93e00be198e41dda860225/Solidarity/Assets/Images/Singularity%20Logo.png)](https://www.youtube.com/watch?v=qeFG8bBCwGo)
 
+Click the Singularity logo to see the game trailer.
+
 ## Images
 
 ![Main Menu](/Solidarity/Assets/Images/Menu.png)
