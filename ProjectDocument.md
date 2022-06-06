@@ -26,7 +26,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## User Interface
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+**Richmond Ballesteros** The User Interface is one of the most important aspects to our project. For style, I wanted to utilize assets that very much demonstrated our game atmosphere, so I used more "space"-ey assets. From the beginning, the player is shown the main menu where the player is able to either start the game or view the credits page. During gameplay, the HUD displays the current level. In addition, the player can go to the [pause menu](https://github.com/orange-shasta/Singularity/blob/404f777b6b24f1f4474b79fed0b5e7744525a865/Solidarity/Assets/Scripts/UI/PauseMenu.cs#L6), where the player can resume, see the controls, restart the level, or go back to the main menu. Finally, the intro and outro cutscenes were created in order to explain to the player the beginning and ending of our story. These cutscenes were created from UI Text elements and backgrounds.
 
 ## Movement/Physics
 
