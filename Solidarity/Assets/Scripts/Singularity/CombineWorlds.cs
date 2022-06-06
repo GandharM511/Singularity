@@ -21,7 +21,7 @@ namespace Singularity
         // The world is to be created when the level starts.
         void Start()
         {
-            if (enabled)
+            if (world3Enabled)
             {
                 foreach(Transform child in world1.transform)
                 {
