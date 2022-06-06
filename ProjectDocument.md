@@ -78,7 +78,7 @@ Sci-fi sound style to connect with the space theme.
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
-
+**Richmond Ballesteros** I created an md file for the [press kit](https://github.com/orange-shasta/Singularity/blob/main/Presskit.md). In this press kit md file, I had sections for the game description, game trailer, game screenshots, and project members. I decided to start off with a short description of the game, what genres it is, and an overview of the story. After, I showcased the [trailer](https://www.youtube.com/watch?v=qeFG8bBCwGo). In the trailer, I showcased the intro cutscene in order to give the watchers the story and a lot of gameplay clips to give watchers a gist of how the game is played. Afterwards, I included the screenshots that best represented the game. I included the title screen, some screenshots of levels, and the pause screen, which I think gives a good general overview of what our game looks like. Finally, I included introductions of all the project members and their pictures. 
 
 ## Game Feel
 
