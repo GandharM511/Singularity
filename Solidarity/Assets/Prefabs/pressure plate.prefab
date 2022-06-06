@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plateObject: {fileID: 3286013445739065274}
+  deltaY: 0.03
+  pressureOn: {fileID: 8300000, guid: 21a14c769c649a042845ca7db707f84e, type: 3}
+  pressureOff: {fileID: 8300000, guid: 4c80799b042485f45bab78a776e5edc1, type: 3}
 --- !u!61 &3286013445739065268
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,41 +15,52 @@ namespace Singularity
 
         public GameObject levelController;
 
+        public bool world3Enabled = true;
+
 
         // The world is to be created when the level starts.
         void Start()
         {
-            foreach(Transform child in world1.transform)
+            if (world3Enabled)
             {
-                if (child.gameObject.tag == "Untagged")
+                foreach(Transform child in world1.transform)
                 {
-                    addToWorld3(child.gameObject);
+                    if (child.gameObject.tag == "Untagged")
+                    {
+                        addToWorld3(child.gameObject);
+                    }
+
+                    if (child.gameObject == goal)
+                    {
+                        GameObject newObj = Instantiate(goal, transform, true);
+                        newObj.transform.localPosition = new Vector3(0,0,0) + child.gameObject.transform.localPosition;
+                        newObj.transform.localScale = child.gameObject.transform.localScale;
+
+                        Vector3 rotation = new Vector3(child.gameObject.transform.eulerAngles.x, child.gameObject.transform.eulerAngles.y, child.gameObject.transform.eulerAngles.z);
+                        newObj.transform.eulerAngles = rotation;
+
+                        levelController.GetComponent<LevelComplete>().setWorld3Goal(newObj.transform.GetChild(0).gameObject);
+                    }
                 }
 
-                if (child.gameObject == goal)
+                foreach(Transform child in world2.transform)
                 {
-                    GameObject newObj = Instantiate(goal, transform, true);
-                    newObj.transform.localPosition = new Vector3(0,0,0) + child.gameObject.transform.localPosition;
-                    newObj.transform.localScale = child.gameObject.transform.localScale;
+                    if (child.gameObject.tag == "Untagged")
+                    {
+                        addToWorld3(child.gameObject);
+                    }
 
-                    levelController.GetComponent<LevelComplete>().setWorld3Goal(newObj.transform.GetChild(0).gameObject);
-                }
-            }
+                    if (child.gameObject == goal)
+                    {
+                        GameObject newObj = Instantiate(goal, transform, true);
+                        newObj.transform.localPosition = new Vector3(0,0,0) + child.gameObject.transform.localPosition;
+                        newObj.transform.localScale = child.gameObject.transform.localScale;
 
-            foreach(Transform child in world2.transform)
-            {
-                if (child.gameObject.tag == "Untagged")
-                {
-                    addToWorld3(child.gameObject);
-                }
+                        Vector3 rotation = new Vector3(child.gameObject.transform.eulerAngles.x, child.gameObject.transform.eulerAngles.y, child.gameObject.transform.eulerAngles.z);
+                        newObj.transform.eulerAngles = rotation;
 
-                if (child.gameObject == goal)
-                {
-                    GameObject newObj = Instantiate(goal, transform, true);
-                    newObj.transform.localPosition = new Vector3(0,0,0) + child.gameObject.transform.localPosition;
-                    newObj.transform.localScale = child.gameObject.transform.localScale;
-
-                    levelController.GetComponent<LevelComplete>().setWorld3Goal(newObj.transform.GetChild(0).gameObject);
+                        levelController.GetComponent<LevelComplete>().setWorld3Goal(newObj.transform.GetChild(0).gameObject);
+                    }
                 }
             }
         }
@@ -60,6 +71,9 @@ namespace Singularity
             GameObject newObj = Instantiate(platformPrefab, transform, true);
             newObj.transform.localPosition = new Vector3(0,0,0) + obj.transform.localPosition;
             newObj.transform.localScale = obj.transform.localScale;
+
+            Vector3 rotation = new Vector3(obj.transform.eulerAngles.x, obj.transform.eulerAngles.y, obj.transform.eulerAngles.z);
+            newObj.transform.eulerAngles = rotation;
         }
     }
 }
