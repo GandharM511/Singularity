@@ -54,7 +54,6 @@ namespace Singularity
             {
                 if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.X))
                 {
-                    // TODO: play switch audio
                     if (switchedOn == false)
                     {
                         AudioSource.PlayClipAtPoint(switchOn, transform.position);
@@ -79,27 +78,5 @@ namespace Singularity
         {
             cameraController = GameObject.Find("Main Camera");
         }
-
-
-        /*void OnTriggerStay2D(Collider2D col)
-        {
-            // TODO: Check the current collider is active character,
-            // don't want player to hit switches when not in that world
-            if (Input.GetButtonDown("Fire2"))
-            {
-                if (switchedOn == false)
-                {
-                    // When the switch is turned on we must call notify On.
-                    switchPublisher.NotifyOn();
-                    switchedOn = true;
-                }
-                else if (switchedOn == true)
-                {
-                    // When the switch is turned off we must call notify Off.
-                    switchPublisher.NotifyOff();
-                    switchedOn = false;
-                }
-            }
-        }*/
     }
 }
