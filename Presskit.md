@@ -16,7 +16,7 @@ Singularity is a 2D Puzzle Platformer that takes place between two seperate real
 
 ![Normal Level](/Solidarity/Assets/Images/NormalLevel.png)
 
-![Pause Menu](/Solidarity/Assets/Images/PauseMenu.png)
+![Pause Menu](/Solidarity/Assets/Images/PauseMenu.jpg)
 
 ![Hard Level](/Solidarity/Assets/Images/HardLevel.png)
 
