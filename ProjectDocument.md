@@ -28,7 +28,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## User Interface
 
-**Richmond Ballesteros** The User Interface is one of the most important aspects to our project. For style, I wanted to utilize assets that very much demonstrated our game atmosphere, so I used more "space"-ey assets. From the beginning, the player is shown the main menu where the player is able to either start the game or view the credits page. During gameplay, the HUD displays the current level. In addition, the player can go to the [pause menu](https://github.com/orange-shasta/Singularity/blob/404f777b6b24f1f4474b79fed0b5e7744525a865/Solidarity/Assets/Scripts/UI/PauseMenu.cs#L6), where the player can resume, see the controls, restart the level, or go back to the main menu. Finally, the intro and outro cutscenes were created in order to explain to the player the beginning and ending of our story. These cutscenes were created from UI Text elements and backgrounds.
+**Richmond Ballesteros** The User Interface is one of the most important aspects to our project. For style, I wanted to utilize assets that very much demonstrated our game atmosphere, so I used more "space"-ey assets. From the beginning, the player is shown the **main menu** where the player is able to either start the game, view the credits page, or quit the game. During gameplay, the [HUD](https://github.com/orange-shasta/Singularity/blob/344aa61e4df5545b5f65c498504b2339cd0e880a/Solidarity/Assets/Scripts/UI/InGameUI.cs#L7) displays the current level. In addition, the player can go to the [pause menu](https://github.com/orange-shasta/Singularity/blob/404f777b6b24f1f4474b79fed0b5e7744525a865/Solidarity/Assets/Scripts/UI/PauseMenu.cs#L6), where the player can resume, see the controls, restart the level, or go back to the main menu. Finally, the intro and outro cutscenes were created in order to explain to the player the beginning and ending of our story. These cutscenes were created from UI Text elements and backgrounds.
 
 ## Movement/Physics
 
@@ -65,6 +65,8 @@ with the E key to interact with powerups and switches, and Left Shift to switch 
 
 ## Game Logic
 
+**Gandhar Mannur**
+I worked on level generation by making the majority of the levels. In a game like this, it becomes a little bit difficult to make levels that are difficult enough that players will take a good amount of time to finish, but also not lose interes. When creating levels I prioritized a variety of level design techniques, such as trapping one player, and timed jumps after stepping off a pressure plate. I also had to consider how I can incorporate skill jumps, and how although the levels might seem simple at first, they require getting used to the mechanics of the game. We worked on 10 levels total, ranging from tutorial style levels to teach the mechanics of the game, to hard levels that require constant switching between characters, and testing what each pressure plate does. We made the levels progressively get more difficult while maintaining interest and relevance to the previous levels. A concept/strategy that you learn in a previous level most likely will be used in the next few levels.
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
 
 # Sub-Roles
