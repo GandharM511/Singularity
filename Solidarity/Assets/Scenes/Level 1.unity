@@ -238,15 +238,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3556857623694376375, guid: 5fe69bf1157461e40931d80d66e9ee96,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -76
+      objectReference: {fileID: 0}
     - target: {fileID: 6869311188877930896, guid: 5fe69bf1157461e40931d80d66e9ee96,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6869311189574405305, guid: 5fe69bf1157461e40931d80d66e9ee96,
         type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869311189574405305, guid: 5fe69bf1157461e40931d80d66e9ee96,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6869311189574405309, guid: 5fe69bf1157461e40931d80d66e9ee96,
         type: 3}
@@ -353,32 +363,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6869311190174552886, guid: 5fe69bf1157461e40931d80d66e9ee96,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fe69bf1157461e40931d80d66e9ee96, type: 3}
---- !u!114 &50236515 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8757242408646134880, guid: 5fe69bf1157461e40931d80d66e9ee96,
-    type: 3}
-  m_PrefabInstance: {fileID: 50236514}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &50236516 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8757242409000515144, guid: 5fe69bf1157461e40931d80d66e9ee96,
-    type: 3}
-  m_PrefabInstance: {fileID: 50236514}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &86485628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3023,11 +3014,11 @@ PrefabInstance:
     - target: {fileID: 1855338992, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
       propertyPath: masterSlider
       value: 
-      objectReference: {fileID: 50236516}
+      objectReference: {fileID: 0}
     - target: {fileID: 1855338992, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
       propertyPath: masterVolumeText
       value: 
-      objectReference: {fileID: 50236515}
+      objectReference: {fileID: 0}
     - target: {fileID: 6513142533595350241, guid: 66a8cbb4f6deb8e408190b9b01694ee5,
         type: 3}
       propertyPath: m_RootOrder
@@ -3092,7 +3083,7 @@ PrefabInstance:
         type: 3}
       propertyPath: masterSlider
       value: 
-      objectReference: {fileID: 50236516}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66a8cbb4f6deb8e408190b9b01694ee5, type: 3}
 --- !u!1 &1846174110

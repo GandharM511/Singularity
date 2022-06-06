@@ -11,27 +11,28 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] Slider masterSlider;
     [SerializeField] TextMeshProUGUI masterVolumeText;  
 
-    public const string MIXER_MASTER = "MasterVolume";
+    public const string MIXER_MASTER = "masterVolume";
+
 
     void Awake()
     {
+        Debug.Log("awake");
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
+        masterSlider.value = PlayerPrefs.GetFloat(AudioManager.MASTER_KEY, -40.0f);
+        masterVolumeText.text = Mathf.RoundToInt(Mathf.Abs((masterSlider.value / -80 * 100) - 100)) + "%";
     }
 
     void Start()
     {
+        Debug.Log("start");
         masterSlider.value = PlayerPrefs.GetFloat(AudioManager.MASTER_KEY, -40.0f);
+        masterVolumeText.text = Mathf.RoundToInt(Mathf.Abs((masterSlider.value / -80 * 100) - 100)) + "%";
     }
 
     void OnDisable()
     { 
+        Debug.Log("Change Scene");
         PlayerPrefs.Save();
-    }
-
-    void Update()
-    {
-        Debug.Log("VolumeSettings On Update");
-        Debug.Log(PlayerPrefs.GetFloat(AudioManager.MASTER_KEY, 69));        
     }
 
     void SetMasterVolume(float value)
@@ -39,5 +40,7 @@ public class VolumeSettings : MonoBehaviour
         mixer.SetFloat(MIXER_MASTER, value);
         masterVolumeText.text = Mathf.RoundToInt(Mathf.Abs((value / -80 * 100) - 100)) + "%";
         PlayerPrefs.SetFloat(AudioManager.MASTER_KEY, masterSlider.value);
+        Debug.Log(value);
     }
+    
 }

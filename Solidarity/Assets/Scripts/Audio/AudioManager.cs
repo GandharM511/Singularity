@@ -18,11 +18,12 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-
+            Debug.Log("Dont Destroy on Load");
             DontDestroyOnLoad(gameObject);
         }
         else
         {
+            Debug.Log("Destroy on load");
             Destroy(gameObject);
         }
 
