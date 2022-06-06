@@ -55,6 +55,15 @@ with the E key to interact with powerups and switches, and Left Shift to switch 
 
 ## Game Logic
 
+There are various different states the game presents to the user. On open, the user is meets a main menu, where they can start the game, view credits, or quit. When playing the game, the player naviates through different levels that all exist in their own scene. In any of these scenes, the user can open a pause menu to both restart play on the current scene, return to the main menu scene, or view other on screen information.
+
+**Arjun Kahlon**
+In my contribution I worked with my other team members to create and string our levels together. Furthermore I implemented varying gameplay mechanims into these levels, which played upon certain design patterns. One example of this can be the Publisher Subscriber Pattern seen in our platforms and switches. In this case, platforms can subscribe to either a switch or a pressure plate. These switches then publish and notify their current state to their subscribters. This implementation is very broad, and allows lots of room for new interaction in the subscribers. Another design patter present is the Singleton Audio Manager, which the game to have persistant audio. This was important because across all our scenes it should only be neccesary to instantiate one audio manager. Below are pictures of the scene to scene logic, alongside diagrams to visualize the Publisher Subscriber Patter.
+
+![Game State Loop](/Solidarity/Assets/Images/GameStateLoop.png)
+![Publisher Subscriber](/Solidarity/Assets/Images/PublisherSubscriber.png)
+
+
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
 
 # Sub-Roles
@@ -83,7 +92,7 @@ When we made our build for the playtest, we were not aware of a variety of bugs 
 
 ## Narrative Design
 
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+When presented the theme "it was the best of times, it was the worst of times", my mind was directed towards duality. In this game we tried to address this duality, with hope to reach Singularity. As highlighted in the opening cutscene, the narrative of this game revolves around Specimen 153 trying to become one again. To implement this in the gameplay, we ensured that progress requires the user to switch back and forth between these split realities. Furthermore we wanted to push to goal of singulairty by introducing the gem powerup, which combines the specimen back into one.
 
 ## Press Kit and Trailer
 
