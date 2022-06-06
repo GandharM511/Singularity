@@ -32,8 +32,6 @@ public class AudioManager : MonoBehaviour
     void LoadVolume() // Volume saved in VolumeSettings.cs
     {
         float masterVolume = PlayerPrefs.GetFloat(MASTER_KEY, -40.0f);
-        Debug.Log("Load Volume");
-        Debug.Log(masterVolume);
         mixer.SetFloat(VolumeSettings.MIXER_MASTER, masterVolume);
     }
 }

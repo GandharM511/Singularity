@@ -21,7 +21,6 @@ public class VolumeSettings : MonoBehaviour
     void Start()
     {
         masterSlider.value = PlayerPrefs.GetFloat(AudioManager.MASTER_KEY, -40.0f);
-
     }
 
     void OnDisable()
