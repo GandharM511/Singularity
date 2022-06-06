@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   world1Goal: {fileID: 368642926}
   world2Goal: {fileID: 1441299255}
+  finishSound: {fileID: 8300000, guid: 743f1b6f026d23344a695dbae5f4fade, type: 3}
 --- !u!114 &368062153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2940,11 +2941,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3434442761475442955, guid: c3fc0d91a76859246a3260fddcbe75b9,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 88baadb8576d9094e861c8fca924f93d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3fc0d91a76859246a3260fddcbe75b9, type: 3}
 --- !u!1001 &8557601109379993443

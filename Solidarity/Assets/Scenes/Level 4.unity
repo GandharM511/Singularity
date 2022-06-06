@@ -982,6 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   world1Goal: {fileID: 1052082766}
   world2Goal: {fileID: 807294247}
+  finishSound: {fileID: 8300000, guid: 743f1b6f026d23344a695dbae5f4fade, type: 3}
 --- !u!33 &545662142
 MeshFilter:
   m_ObjectHideFlags: 0
