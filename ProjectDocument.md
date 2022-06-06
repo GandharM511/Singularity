@@ -55,6 +55,8 @@ with the E key to interact with powerups and switches, and Left Shift to switch 
 
 ## Game Logic
 
+**Gandhar Mannur**
+I worked on level generation by making the majority of the levels. In a game like this, it becomes a little bit difficult to make levels that are difficult enough that players will take a good amount of time to finish, but also not lose interes. When creating levels I prioritized a variety of level design techniques, such as trapping one player, and timed jumps after stepping off a pressure plate. I also had to consider how I can incorporate skill jumps, and how although the levels might seem simple at first, they require getting used to the mechanics of the game. We worked on 10 levels total, ranging from tutorial style levels to teach the mechanics of the game, to hard levels that require constant switching between characters, and testing what each pressure plate does. We made the levels progressively get more difficult while maintaining interest and relevance to the previous levels. A concept/strategy that you learn in a previous level most likely will be used in the next few levels.
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
 
 # Sub-Roles
