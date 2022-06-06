@@ -42,7 +42,18 @@ The back ground was to be changed for each level to give hints but changing one 
 
 **Describe the default input configuration.**
 
+**Gandhar Mannur: **
+The default input configuration utilizes two main playing styles. The first one allows for left and right movement done with the A and D keys respectively
+with the E key to interact with powerups and switches, and Left Shift to switch between characters. The other style allows for the left and right arrow keys to move left and right, with the Z key to switch between characters, and the X key to interact with powerups and switches. The universal button for jumping is the Spacebar key, and jumping for longer periods makes the height greater. In order to control the UI system, the mouse pointer and click can be utilized to complete each option that the cursor is hovering over. 
+
 **Add an entry for each platform or input style your project supports.**
+[PowerUp Input](https://github.com/orange-shasta/Singularity/blob/8cb92397a0a0ea7eec6010613c62245078af149d/Solidarity/Assets/Scripts/Singularity/PowerUpController.cs#L36)
+
+[Switch Input](https://github.com/orange-shasta/Singularity/blob/8cb92397a0a0ea7eec6010613c62245078af149d/Solidarity/Assets/Scripts/Singularity/Switch.cs#L55)
+
+[CameraController Moving Characters Input](https://github.com/orange-shasta/Singularity/blob/8cb92397a0a0ea7eec6010613c62245078af149d/Solidarity/Assets/Scripts/Singularity/CameraController.cs#L36)
+
+[Jump Input](https://github.com/orange-shasta/Singularity/blob/8cb92397a0a0ea7eec6010613c62245078af149d/Solidarity/Assets/Scripts/Mechanics/PlayerController.cs#L80)
 
 ## Game Logic
 
